@@ -1,0 +1,10 @@
+FROM python:3.9.1-alpine3.13
+
+RUN apk update
+RUN apk add --virtual build-deps gcc python3-dev musl-dev
+RUN apk add --no-cache mariadb-dev
+
+RUN pip install mysqlclient
+RUN pip install sqlalchemy
+
+CMD python
